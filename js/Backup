@@ -1,0 +1,33 @@
+function buildQuiz(){
+// variable to store the HTML output
+
+var output = [];
+
+// for each question ...
+myQuestions.forEach(
+(currentQuestion, questionNumber) => {
+
+    //variable to store the list of possible answers
+    
+    var answers = [];
+    
+    // and for each available answer...
+    
+    for(letter in currentQuestion.answers){
+
+        //add an HTML radio button
+    answers.push(
+
+    )
+    }
+}
+}
+
+function showResults(){}
+
+//display quiz
+buildQuiz();
+
+
+// on submit, show results
+submitButton.addEventListener(click', show results);
