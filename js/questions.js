@@ -5,7 +5,7 @@ var submitButton = document.getElementById('submit');
 
 const myQuestions = [
     {
-     question1:"Who invented Javascript?",
+     question0:"Who invented Javascript?",
       answers: {
           a:"Douglas Crockford",
           b: "Sheryl Sanberg",
@@ -15,17 +15,17 @@ const myQuestions = [
       correctAnswer: "c"
       },
       {
-          question2: "Inside which HTML element do we put the JavaScript?",
+          question1: "Inside which HTML element do we put the JavaScript?",
          answers: { 
          a: "<JS>",
-          b: "<script>",
+        b: "<script>",
          c: "<javascript>",
           d:"<scripting>"
           },
       correctAnswer: "b"
       },
       {
-          question3: "What is the correct syntax for referring to an external script called 'xxx.'js?",
+          question2: "What is the correct syntax for referring to an external script called 'xxx.'js?",
           answers: {
          a: "<script src=xxx.jx>",
          b:"<script href=xxx.js>",
@@ -36,7 +36,7 @@ const myQuestions = [
          correctAnswer:"a"
       },
       {
-          question4: "How can you add a comment in javascript?",
+          question3: "How can you add a comment in javascript?",
           answers: {
           a: "<!--This is a comment-->",
           b: "'This is a comment'",
@@ -44,7 +44,8 @@ const myQuestions = [
          d:"This is a comment"
       },
           correctAnswer:"c"
-      }]
+      },
+    ];
 
 
  var timeLeft = 75
@@ -54,22 +55,47 @@ setInterval(function(){
 
 setInterval()
 
-//Declar/create variable to hold the HTML button reference
-var startbtn = document.queryselector("start");
-var 
+//Declare/create variable to hold the HTML button reference
+var startbtn = document.queryselector("start Quiz");
+var questions =document.queryselector("Questioncontainer");
+var setNumber = 0
 
 startBtn.addEventListener("click",function(){
 
-
+var populateData = function() {
+for(let i = 0; i<Object.keys(myQuestion[0]). length; i++) {
 //Create HTML elements to hold the data values0
-var itemData = document.createElement("h2");
-itemData.txtContent = myQuestions(0)(0);
-
-console.log(itemData);
-})
-
-for(let i = 0; i<Object.keys(myQuestion(0)(i).length; i++) {
+var itemData = document.createElement("button");
+itemData.txtContent = myQuestions(0)(i);
 
     //get HTML on the actual website
-    .append(itemData)
+    questions.append(itemData)
+}
 
+
+
+//call our populate Data function
+populateData(setNumber);
+};
+
+var populateData = function () {
+
+
+questions.addEventListener("click", function (event) {
+
+//delete all content in the list
+questions.txtContent = "";
+})
+
+//Append the new items in the list 
+ for(let i = 0; i<Object.keys(myQuestion[0]). length; i++) {
+  //Create HTML elements to hold the data values
+      var itemData = document.createElement("button");
+      itemData.txtContent = myQuestions(setNumber)(i);
+
+    //get HTML on the actual website
+    questions.append(itemData)
+ }
+
+//call our populate Data function
+populateData(setNumber);

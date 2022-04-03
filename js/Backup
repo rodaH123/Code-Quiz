@@ -31,3 +31,9 @@ buildQuiz();
 
 // on submit, show results
 submitButton.addEventListener(click', show results);
+
+
+ <button id="next_btn" class="next_btn btn hide">Next</button>
+  <div>
+     <div>id="results"></div>
+     </div>
