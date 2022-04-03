@@ -56,18 +56,20 @@ setInterval()
 
 //Declar/create variable to hold the HTML button reference
 var startbtn = document.queryselector("start");
+var 
 
 startBtn.addEventListener("click",function(){
 
 
 //Create HTML elements to hold the data values0
 var itemData = document.createElement("h2");
-itemData.txtContent = itemSets(0)
+itemData.txtContent = myQuestions(0)(0);
 
-console.log
+console.log(itemData);
+})
 
+for(let i = 0; i<Object.keys(myQuestion(0)(i).length; i++) {
 
+    //get HTML on the actual website
+    .append(itemData)
 
-
-
-        
