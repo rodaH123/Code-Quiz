@@ -1,9 +1,38 @@
 
-var quizContainer=document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
+var startQuizButton = document.getElementById('start-btn')
+var questionContainerElement = document.getElementById
+('question-containier')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById
+('answer-buttons')
 
-const myQuestions = [
+let shuffledQuestions, currentQuestionIndex
+
+
+startQuizButton.addEventListener('click', startGame)
+
+function startGame() {
+startQuizButton.classList.add('hide')
+shuffledQuestions = questions.sort(() => Math.random() - .5)
+currentQuestionIndex = 0
+questionContainerElement.classList.remove('hide')
+
+setNextQuestion()
+
+}
+
+function setNextQuestion() {
+showQuestion(shuffledQuestions[currentQuestionIndex])
+
+}
+
+function showQuestion(question){
+    questionElement.innerText = question.question
+
+
+}
+
+const questions = [
     {
      question0:"Who invented Javascript?",
       answers: {
@@ -46,56 +75,3 @@ const myQuestions = [
           correctAnswer:"c"
       },
     ];
-
-
- var timeLeft = 75
-setInterval(function(){
-    console.log(timeLeft--)
-},1000);
-
-setInterval()
-
-//Declare/create variable to hold the HTML button reference
-var startbtn = document.queryselector("start Quiz");
-var questions =document.queryselector("Questioncontainer");
-var setNumber = 0
-
-startBtn.addEventListener("click",function(){
-
-var populateData = function() {
-for(let i = 0; i<Object.keys(myQuestion[0]). length; i++) {
-//Create HTML elements to hold the data values0
-var itemData = document.createElement("button");
-itemData.txtContent = myQuestions(0)(i);
-
-    //get HTML on the actual website
-    questions.append(itemData)
-}
-
-
-
-//call our populate Data function
-populateData(setNumber);
-};
-
-var populateData = function () {
-
-
-questions.addEventListener("click", function (event) {
-
-//delete all content in the list
-questions.txtContent = "";
-})
-
-//Append the new items in the list 
- for(let i = 0; i<Object.keys(myQuestion[0]). length; i++) {
-  //Create HTML elements to hold the data values
-      var itemData = document.createElement("button");
-      itemData.txtContent = myQuestions(setNumber)(i);
-
-    //get HTML on the actual website
-    questions.append(itemData)
- }
-
-//call our populate Data function
-populateData(setNumber);
