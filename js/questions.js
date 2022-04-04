@@ -15,7 +15,7 @@ function startGame() {
 startQuizButton.classList.add('hide')
 shuffledQuestions = questions.sort(() => Math.random() - .5)
 currentQuestionIndex = 0
-questionContainerElement.classList.remove('hide')
+
 
 setNextQuestion()
 
@@ -23,18 +23,39 @@ setNextQuestion()
 
 function setNextQuestion() {
 showQuestion(shuffledQuestions[currentQuestionIndex])
+resetstate
 
 }
 
 function showQuestion(question){
     questionElement.innerText = question.question
-
-
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if(answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click',selectAnswer)
+        answerButtonsElement.appendChild(button)
+    });
 }
 
+function selectAnswer(e) {
+
+//to loop in all the children inside the answer buttons
+}
+function resetstate() {
+nextbutton.classList.add('hide')
+while (answerButtonsElement.firstChild) {
+answerButtonsElement.removeChild
+(answerButtonsElement.firstChild)
+}
+
+}
 const questions = [
     {
-     question0:"Who invented Javascript?",
+     question: 'Who invented Javascript?',
       answers: {
           a:"Douglas Crockford",
           b: "Sheryl Sanberg",
@@ -44,7 +65,7 @@ const questions = [
       correctAnswer: "c"
       },
       {
-          question1: "Inside which HTML element do we put the JavaScript?",
+          question: "Inside which HTML element do we put the JavaScript?",
          answers: { 
          a: "<JS>",
         b: "<script>",
@@ -54,7 +75,7 @@ const questions = [
       correctAnswer: "b"
       },
       {
-          question2: "What is the correct syntax for referring to an external script called 'xxx.'js?",
+          question: "What is the correct syntax for referring to an external script called 'xxx.'js?",
           answers: {
          a: "<script src=xxx.jx>",
          b:"<script href=xxx.js>",
@@ -65,7 +86,7 @@ const questions = [
          correctAnswer:"a"
       },
       {
-          question3: "How can you add a comment in javascript?",
+          question: "How can you add a comment in javascript?",
           answers: {
           a: "<!--This is a comment-->",
           b: "'This is a comment'",
