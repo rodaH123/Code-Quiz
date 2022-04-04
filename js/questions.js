@@ -66,6 +66,22 @@ answerButtonsElement.removeChild
 (answerButtonsElement.firstChild)
 }
 
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body.correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button,button,dataset.correct)
+        }) 
+        nextButton.classList.remove()
+    }
+
+            
+     function setStatusClass(element,correct){
+         ClearStatusClass
+     }
+    })
+}
 
 // list of questions and answer in an array
 }
