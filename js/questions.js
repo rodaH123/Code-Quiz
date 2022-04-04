@@ -35,9 +35,10 @@ function showQuestion(question){
         if(answer.correct) {
             button.dataset.correct = answer.correct
         }
+        //This is to append the answer selections from the arry list onto the DOM
         button.addEventListener('click',selectAnswer)
         answerButtonsElement.appendChild(button)
-    });
+    })
 }
 
 
