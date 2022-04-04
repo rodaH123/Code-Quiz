@@ -1,10 +1,22 @@
 
+
+//to manage timer and have time countdown during quiz
+var timeLeft = 75
+setInterval(function(){
+    console.log(timeLeft--)
+},1000);
+
+setInterval()
+
 var startQuizButton = document.getElementById('start-btn')
 var questionContainerElement = document.getElementById
 ('question-containier')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById
 ('answer-buttons')
+
+
+
 
 //To get questions in the array shuffled
 let shuffledQuestions, currentQuestionIndex
