@@ -6,6 +6,7 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById
 ('answer-buttons')
 
+//To get questions in the array shuffled
 let shuffledQuestions, currentQuestionIndex
 
 
@@ -15,24 +16,22 @@ function startGame() {
 startQuizButton.classList.add('hide')
 shuffledQuestions = questions.sort(() => Math.random() - .5)
 currentQuestionIndex = 0
-
-
 setNextQuestion()
-
 }
 
+//To continue to show different questions from the question and answer array after first question is listed in the browser.
 function setNextQuestion() {
 showQuestion(shuffledQuestions[currentQuestionIndex])
-resetstate
-
 }
 
+//To populate different answers
 function showQuestion(question){
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
         button.classList.add('btn')
+        //If correct answer is selected, this answer will be labeled as correct.
         if(answer.correct) {
             button.dataset.correct = answer.correct
         }
@@ -41,9 +40,11 @@ function showQuestion(question){
     });
 }
 
+
+
 function selectAnswer(e) {
 
-//to loop in all the children inside the answer buttons
+//to loop in all the children(from the array) inside the answer buttons
 }
 function resetstate() {
 nextbutton.classList.add('hide')
@@ -52,6 +53,8 @@ answerButtonsElement.removeChild
 (answerButtonsElement.firstChild)
 }
 
+
+// list of questions and answer in an array
 }
 const questions = [
     {
@@ -95,4 +98,4 @@ const questions = [
       },
           correctAnswer:"c"
       },
-    ];
+    ]
